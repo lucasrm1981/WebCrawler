@@ -42,7 +42,7 @@ def extract_crypto_data(table):
 if __name__ == '__main__':
     url = 'https://crypto.com/price'
     response = requests.get(url)
-    soup = BeautifulSoup(url.text, 'html.parser')
+    soup = BeautifulSoup(response.text, 'html.parser')
     table = soup.find('table')
 
     heading = get_table_heading(table)
